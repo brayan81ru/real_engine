@@ -1,9 +1,9 @@
 ﻿# Engine sources
-file(ENGINE_SOURCES
-     src/core/RCore.h
-     src/core/RCore.cpp
-     src/renderer/RRenderer.h
-     src/renderer/RRenderer.cpp
+file(GLOB ENGINE_SOURCES
+        src/core/*.cpp
+        src/core/*.h
+        src/renderer/*.cpp
+        src/renderer/*.h
 )
 
 add_library(REngine STATIC ${ENGINE_SOURCES})
