@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿#define SDL_MAIN_HANDLED
+#include <iostream>
 #include "../rengine/src/core/RCore.h"
 
 int main() {

@@ -1,4 +1,5 @@
-﻿namespace REngine {
+﻿#pragma once
+namespace REngine {
 
 class RRenderer {
 
