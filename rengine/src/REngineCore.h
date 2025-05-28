@@ -1,7 +1,8 @@
-﻿namespace REngine {
+﻿#pragma once
+namespace REngine {
 
 class REngineCore {
 
 };
 
-} // DSEngine
+} // REngine
