@@ -5,5 +5,3 @@ class RWindows {
 };
 
 } // REngine
-
-#endif //RWINDOWS_H
