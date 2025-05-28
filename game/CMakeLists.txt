@@ -1,0 +1,2 @@
+﻿add_executable(dark_shadows_rt game.cpp)
+target_link_libraries(dark_shadows_rt PUBLIC REngine)
