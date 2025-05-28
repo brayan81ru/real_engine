@@ -1,16 +1,27 @@
 ﻿# Engine sources
-file(GLOB ENGINE_SOURCES src/*.cpp src/*.h)
+file(GLOB ENGINE_SOURCES
+        src/core*.cpp
+        src/core/*.h
+        src/renderer/*.cpp
+        src/renderer/*.h
+)
 
 add_library(REngine STATIC ${ENGINE_SOURCES})
 
-# Add Diligent as subdirectory
+# Add Diligent as subdirectory (ensure you've cloned submodules)
 add_subdirectory(third_party/DiligentEngine)
 
-# Link to your executable
+# Platform-specific backend selection
+if(WIN32)
+    target_link_libraries(REngine PRIVATE Diligent-GraphicsEngineD3D12-static)
+elseif(APPLE)
+    target_link_libraries(REngine PRIVATE Diligent-GraphicsEngineMetal-static)
+else() # Linux/Unix
+    target_link_libraries(REngine PRIVATE Diligent-GraphicsEngineVk-static)
+endif()
+
+# Link core libraries (required for all configurations)
 target_link_libraries(REngine PRIVATE
-        Diligent-GraphicsEngineD3D11-static # D3D11 backend
-        Diligent-GraphicsEngineVk-static  # Vulkan backend
-        Diligent-GraphicsEngineD3D12-static # D3D12 backend
         Diligent-GraphicsEngine
         Diligent-Common
 )
