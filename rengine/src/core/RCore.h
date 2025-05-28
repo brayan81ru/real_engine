@@ -1,7 +1,7 @@
 ﻿#pragma once
 namespace REngine {
 
-class REngineCore {
+class RCore {
 
 };
 
