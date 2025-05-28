@@ -26,8 +26,6 @@ target_link_libraries(REngine PRIVATE
         Diligent-Common
 )
 
-
-
 # Link debug libraries (remove -d for release build)
 find_package(SDL2 REQUIRED)
 target_link_libraries(REngine PUBLIC
